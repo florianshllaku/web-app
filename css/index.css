@@ -1,0 +1,30 @@
+.box{
+    box-model: border-box;
+    border: 10px solid transparent;
+    background-clip: padding-box;
+    height: 180px;
+    background-color: #767B91;
+    position: relative;
+  }
+  
+  body{
+      background-color: #3F4045;
+  }
+
+  input[type=checkbox]{
+      margin-top: 15px;
+  }
+
+  p{
+      color: #dee2e6;
+      padding : 0;
+      margin: 0;
+      line-height : 20px;
+  }
+
+.inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -35px 0 0 -50px;
+}
