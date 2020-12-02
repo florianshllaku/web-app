@@ -12,7 +12,7 @@
   }
 
   input[type=checkbox]{
-      margin-top: 15px;
+      margin-top: 5px;
   }
 
   p{
@@ -26,5 +26,5 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -35px 0 0 -50px;
+    margin: -40px 0 0 -50px;
 }
