@@ -1,6 +1,6 @@
 <?php
 
-require_once 'classes\db_conn.class.php';
+require_once 'db_conn.class.php';
 
 class Product extends dbh{
 
@@ -11,8 +11,17 @@ class Product extends dbh{
         while($row = $result->fetch()) {
             $data[] = $row;
         }
+        
+        if (isset($data)){
+            return $data;
+        }
 
-        return $data;
+    }
+
+    public function addProduct($SKU, $Name, $Price, $CategoryId, $Value){
+
+        $sql = "INSERT INTO Products (SKU, Name, Price, CategoryId, Value) VALUES ('$SKU', '$Name', $Price, $CategoryId, '$Value')";
+        $result = $this->connect()->query($sql);
 
     }
 

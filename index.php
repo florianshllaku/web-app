@@ -17,16 +17,19 @@ include 'includes\autoloader.php';
         <?php
         $product = new Product();
         $all = $product->getProducts();
-        foreach ($all as $data) {
-            echo "<div class=\"col-md-3 box\">
-                <input type=\"checkbox\" name=\"check-for-delete\" value=\"{$data["SKU"]}\" />
-                <div class=\"inner\">
-                    <p><b>SKU</b>: ".$data["SKU"]."</p>
-                    <p><b>Name</b>: ".$data["Name"]."</p>
-                    <p><b>Price</b>: ".$data["Price"]."</p>
-                    <p><b>".$data["Type"]."</b>: ".$data["Value"]."</p>
-                </div>
-            </div>";
+        if (is_array($all))
+        {
+            foreach ($all as $data) {
+                echo "<div class=\"col-md-3 box\">
+                    <input type=\"checkbox\" name=\"check-for-delete\" value=\"{$data["SKU"]}\" />
+                    <div class=\"inner\">
+                        <p><b>SKU</b>: ".$data["SKU"]."</p>
+                        <p><b>Name</b>: ".$data["Name"]."</p>
+                        <p><b>Price</b>: ".$data["Price"]."</p>
+                        <p><b>".$data["Type"]."</b>: ".$data["Value"]."</p>
+                    </div>
+                </div>";
+            }
         }
         ?>
         </div>
