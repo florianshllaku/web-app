@@ -3,20 +3,20 @@
     border: 10px solid transparent;
     background-clip: padding-box;
     height: 180px;
-    background-color: #767B91;
+    background-color: #78A1BB;
     position: relative;
   }
   
   body{
-      background-color: #3F4045;
+      background-color: #283044;
   }
 
   input[type=checkbox]{
-      margin-top: 5px;
+      margin-top: 12px;
   }
 
   p{
-      color: #dee2e6;
+      color: #EBF5EE;
       padding : 0;
       margin: 0;
       line-height : 20px;
@@ -26,5 +26,5 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -40px 0 0 -50px;
+    margin: -40px 10 0 -60px;
 }
