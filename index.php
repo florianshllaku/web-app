@@ -2,6 +2,29 @@
 
 include_once 'includes\autoloader.php';
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if (isset($_POST['delete'])) {
+            $Products = $_POST['check-for-delete'];
+            $prepared = '';
+            $i = 0;
+            $len = count($Products) - 1;
+            foreach ($Products as $data) {
+                if ($i == $len){
+                    $prepared = $prepared . "'$data'";
+                }else{
+                    $prepared = $prepared . "'$data', ";
+                }
+                $i++;
+            }
+
+            $delete = new Product();
+            $delete->deleteProducts($prepared);
+
+            header("Location: index.php"); 
+        } 
+    }
+
 ?>
 
 <html lang="en">
@@ -19,11 +42,11 @@ include_once 'includes\autoloader.php';
                 <a href="add.php"><button class="btn btn-primary" >Add</button></a>
             </div>
             <div class="col-xs-4">
-                <button class="btn btn-danger" form="deleteProducts" type="submit">Mass Delete</button>
+                <button class="btn btn-danger" form="deleteProducts" type="submit" name="delete">Mass Delete</button>
             </div>
         </div>
         <hr>
-        <form action="delete.php" method="POST" id="deleteProducts">
+        <form method="POST" id="deleteProducts">
             <div class="row">    
                 <?php
                     $product = new Product();
