@@ -25,6 +25,13 @@ class Product extends dbh{
 
     }
 
+    public function deleteProducts($Products){
+
+        $sql = "DELETE FROM Products WHERE SKU IN ($Products)";
+        $result = $this->connect()->query($sql);
+
+    }
+
 }
 
 ?>

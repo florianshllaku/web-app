@@ -13,38 +13,38 @@ include 'includes\autoloader.php';
 <body>
 
     <div class="container">
-        <div id="header">
-            <h1>Product List</h1>
-            <div class="form-group row">
-                <div class="col-xs-2">
-                    <a href="add.php"><button class="btn btn-primary" >Add</button></a>
-                </div>
-                <div class="col-xs-4">
-                    <button class="btn btn-danger" type="submit">Mass Delete</button>
-                </div>
+        <h1>Product List</h1>
+        <div class="form-group row">
+            <div class="col-xs-2">
+                <a href="add.php"><button class="btn btn-primary" >Add</button></a>
+            </div>
+            <form action="delete.php" method="POST">
+            <div class="col-xs-4">
+                <button class="btn btn-danger" type="submit">Mass Delete</button>
             </div>
         </div>
         <hr>
-        <div class="row">
-        <?php
-        $product = new Product();
-        $all = $product->getProducts();
-        if (is_array($all))
-        {
-            foreach ($all as $data) {
-                echo "<div class=\"col-md-3 box\">
-                    <input type=\"checkbox\" name=\"check-for-delete\" value=\"{$data["SKU"]}\" />
-                    <div class=\"inner\">
-                        <p><b>SKU</b>: ".$data["SKU"]."</p>
-                        <p><b>Name</b>: ".$data["Name"]."</p>
-                        <p><b>Price</b>: ".$data["Price"]."</p>
-                        <p><b>".$data["Type"]."</b>: ".$data["Value"]."</p>
-                    </div>
-                </div>";
-            }
-        }
-        ?>
-        </div>
+            <div class="row">    
+                <?php
+                    $product = new Product();
+                    $all = $product->getProducts();
+                    if (is_array($all))
+                    {
+                        foreach ($all as $data) {
+                            echo "<div class=\"col-md-3 box\">
+                                <input type=\"checkbox\" name=\"check-for-delete[]\" value=\"{$data["SKU"]}\" />
+                                <div class=\"inner\">
+                                    <p><b>SKU</b>: ".$data["SKU"]."</p>
+                                    <p><b>Name</b>: ".$data["Name"]."</p>
+                                    <p><b>Price</b>: ".$data["Price"]."</p>
+                                    <p><b>".$data["Type"]."</b>: ".$data["Value"]."</p>
+                                </div>
+                            </div>";
+                        }
+                    }
+                ?>
+            </div>
+        </form>
 
     </div>
     
