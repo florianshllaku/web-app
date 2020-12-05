@@ -1,6 +1,6 @@
 <?php
 
-include 'includes\autoloader.php';
+include_once 'includes\autoloader.php';
 
 ?>
 
@@ -18,12 +18,12 @@ include 'includes\autoloader.php';
             <div class="col-xs-2">
                 <a href="add.php"><button class="btn btn-primary" >Add</button></a>
             </div>
-            <form action="delete.php" method="POST">
             <div class="col-xs-4">
-                <button class="btn btn-danger" type="submit">Mass Delete</button>
+                <button class="btn btn-danger" form="deleteProducts" type="submit">Mass Delete</button>
             </div>
         </div>
         <hr>
+        <form action="delete.php" method="POST" id="deleteProducts">
             <div class="row">    
                 <?php
                     $product = new Product();

@@ -3,7 +3,7 @@
 include_once 'includes\autoloader.php';
 include 'classes\validation.php';
 
-        $SKU = Validation::character_input($_POST['SKU']);
+        $SKU = Validation::SKU_input($_POST['SKU']);
         $Name = Validation::character_input($_POST['Name']);
         $Price = Validation::numeric_input($_POST['Price']);
         $Type = $_POST['Type'];

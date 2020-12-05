@@ -13,6 +13,14 @@
             $character = trim(htmlspecialchars($character));
             return $character;
         }
+
+        public static function SKU_input($character){
+            $character = trim(htmlspecialchars($character));
+            if(strlen($character) == 6){
+                return $character;
+            }
+            
+        }
         
     }
 
