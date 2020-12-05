@@ -13,6 +13,18 @@ include 'includes\autoloader.php';
 <body>
 
     <div class="container">
+        <div id="header">
+            <h1>Product List</h1>
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <a href="add.php"><button class="btn btn-primary" >Add</button></a>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-danger" type="submit">Mass Delete</button>
+                </div>
+            </div>
+        </div>
+        <hr>
         <div class="row">
         <?php
         $product = new Product();
