@@ -20,8 +20,9 @@ class Product extends dbh{
 
     public function addProduct($SKU, $Name, $Price, $CategoryId, $Value){
 
-        $sql = "INSERT INTO Products (SKU, Name, Price, CategoryId, Value) VALUES ('$SKU', '$Name', $Price, $CategoryId, '$Value')";
-        $result = $this->connect()->query($sql);
+        $sql = $this->connect()->prepare("INSERT INTO Products (SKU, Name, Price, CategoryId, Value) VALUES (?, ?, ?, ?, ?)");
+        $sql->execute(array($SKU, $Name, $Price, $CategoryId, $Value));
+        $sql = null;
 
     }
 
@@ -29,6 +30,7 @@ class Product extends dbh{
 
         $sql = "DELETE FROM Products WHERE SKU IN ($Products)";
         $result = $this->connect()->query($sql);
+        
 
     }
 
