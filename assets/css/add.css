@@ -1,0 +1,28 @@
+body{
+    background-color: #283044;
+    color: #EBF5EE;
+}
+
+hr{
+    border: 1px solid #EBF5EE;
+}
+
+.buttons{
+    float: right;
+    padding-right: 18px;
+    margin-top: -40px;
+}
+
+.col-xs-2{
+    padding-right: 20px;
+}
+
+.row{
+    clear: both;
+}
+
+.container{
+    padding-top: 10px;
+}
+
+

@@ -36,13 +36,23 @@ include 'classes\validation.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type='text/javascript' src="assets\js\script.js"></script>
+    <link rel="stylesheet" href="assets\css\add.css">
 </head>
 
 <body>
 
 <div class="container">
-  
-    <form method="POST">
+    <h1>Product Add</h1>
+    <div class="form-group row buttons">
+        <div class="col-xs-2">
+            <button type="submit" class="btn btn-primary" name="add" form="add" >Save</button>
+        </div>
+        <div class="col-xs-4">
+            <button class="btn btn-danger" type="cancel" onclick="window.location='index.php';return false;" >Cancel</button>
+        </div>
+    </div>
+        <hr>
+    <form method="POST" id="add">
         <div class="form-group row">
             <label for="inputSKU" class="col-sm-2 col-form-label">SKU</label>
             <div class="col-sm-3">
@@ -73,12 +83,6 @@ include 'classes\validation.php';
             </div>
         </div>
         <div id="template"></div>
-        <div class="form-group row">
-            <div class="col-sm-3">
-                <button type="submit" class="btn btn-primary" name="add" >Add</button>
-                <button class="btn btn-danger" type="cancel" onclick="window.location='index.php';return false;" >Cancel</button>
-            </div>
-        </div>
     </form>
 
 </div>
