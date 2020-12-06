@@ -4,8 +4,11 @@ include_once 'includes\autoloader.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+        // when button delete is pressed
+        // gathere an array of checkbox values selected
         if (isset($_POST['delete'])) {
             $Products = $_POST['check-for-delete'];
+            // prepare parameter for the function deleteProducts
             $prepared = '';
             $i = 0;
             $len = count($Products) - 1;
@@ -18,9 +21,11 @@ include_once 'includes\autoloader.php';
                 $i++;
             }
 
+            // Call function deleteProducts()
             $delete = new Product();
             $delete->deleteProducts($prepared);
 
+            // Redirect to index.php
             header("Location: index.php"); 
         } 
     }
@@ -49,17 +54,20 @@ include_once 'includes\autoloader.php';
         <form method="POST" id="deleteProducts">
             <div class="row">    
                 <?php
+                    // Initialize object Product
                     $product = new Product();
+                    // Call function getProducts() of class Products to select data from table
                     $all = $product->getProducts();
                     if (is_array($all))
                     {
+                        // Foreach Product, dynamically generate content with Product specific information
                         foreach ($all as $data) {
                             echo "<div class=\"col-md-3 box\">
                                 <input type=\"checkbox\" name=\"check-for-delete[]\" value=\"{$data["SKU"]}\" />
                                 <div class=\"inner\">
                                     <p><b>SKU</b>: ".$data["SKU"]."</p>
                                     <p><b>Name</b>: ".$data["Name"]."</p>
-                                    <p><b>Price</b>: ".$data["Price"]."</p>
+                                    <p><b>Price($)</b>: ".$data["Price"]."</p>
                                     <p><b>".$data["Type"]."</b>: ".$data["Value"]."</p>
                                 </div>
                             </div>";

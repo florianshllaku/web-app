@@ -1,29 +1,26 @@
-# README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+# Junior Developer Test Task #
 
-### What is this repository for? ###
+  
+A web-app containing two pages for
+1. Product list page
+2. Adding a product page
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Web Technologies ###
 
-### How do I get set up? ###
+* HTML/CSS
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Apache
 
-### Contribution guidelines ###
+* MySql
 
-* Writing tests
-* Code review
-* Other guidelines
+* PHP
 
-### Who do I talk to? ###
+* jQuery
 
-* Repo owner or admin
-* Other community or team contact
+* Sql
+
+
+### Project ###
+* [Source Code](https://bitbucket.org/florianshllaku/web-app/src/master/)
+* [Website-URL](http://51.83.93.105/)
