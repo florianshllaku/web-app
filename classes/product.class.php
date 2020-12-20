@@ -34,7 +34,7 @@ abstract class Product extends dbh{
 
     public function save(){
       $sql = $this->connect()->prepare("INSERT INTO Products (SKU, Name, Price, CategoryId, Value) VALUES (?, ?, ?, ?, ?)");
-      $sql->execute(array($this->SKU, $this->Name, $this->Price, $this->id, $this->getValue()));
+      $sql->execute(array(trim(htmlspecialchars($this->SKU)), trim(htmlspecialchars($this->Name)), filter_var($this->Price, FILTER_SANITIZE_NUMBER_INT), $this->id, trim(htmlspecialchars($this->getValue()))));
       $sql = null;
     }
 
