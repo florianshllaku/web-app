@@ -1,40 +1,3 @@
-<?php
-
-include_once 'includes\autoloader.php';
-include 'classes\validation.php';
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        
-        // when button add is pressed
-        // assign filtered user inputs to variables
-        if (isset($_POST['add'])) {
-            $SKU = Validation::SKU_input($_POST['SKU']);
-            $Name = Validation::character_input($_POST['Name']);
-            $Price = Validation::numeric_input($_POST['Price']);
-            $Type = $_POST['Type'];
-
-            if($Type == "Books"){
-                $id = 1;
-                $Value = Validation::numeric_input($_POST['Weight'])." Kg";
-            }else if($Type == "DVDs"){
-                $id = 2;
-                $Value = Validation::numeric_input($_POST['Size'])." Mb";
-            }else if($Type == "Furniture"){
-                $id = 3;
-                $Value = Validation::numeric_input($_POST['Height']) ."cm x ". Validation::numeric_input($_POST['Width']) ."cm x ". Validation::numeric_input($_POST['Length'])."cm";
-            }
-
-            // call function addProduct with userInputs as parameters
-            $add = new Product();
-            $add->addProduct($SKU, $Name, $Price, $id, $Value);
-            
-            // When Process finishes redirect to index.php
-            header("Location: index.php");
-        } 
-    }
-
-?>
-
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -56,7 +19,7 @@ include 'classes\validation.php';
         </div>
     </div>
         <hr>
-    <form method="POST" id="add">
+    <form method="POST" id="add" action="insert.php">
         <div class="form-group row">
             <label for="inputSKU" class="col-sm-2 col-form-label">SKU</label>
             <div class="col-sm-3">
