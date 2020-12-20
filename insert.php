@@ -1,6 +1,6 @@
 <?php
 
-include_once 'includes\autoloader.php';
+include 'includes\autoloader.php';
 include 'classes\validation.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,7 +25,7 @@ include 'classes\validation.php';
             }
 
             // call function addProduct with userInputs as parameters
-            $add = new Product();
+            $add = new Action();
             $add->addProduct($SKU, $Name, $Price, $id, $Value);
             
             // When Process finishes redirect to index.php

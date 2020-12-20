@@ -22,7 +22,7 @@ include_once 'includes\autoloader.php';
             }
 
             // Call function deleteProducts()
-            $delete = new Product();
+            $delete = new Action();
             $delete->deleteProducts($prepared);
 
             // Redirect to index.php

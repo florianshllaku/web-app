@@ -1,22 +1,19 @@
 <?php
 
-require_once 'db_conn.class.php';
+require_once 'database.class.php';
 
-class Product extends dbh{
+class Action extends dbh{
 
     // getProducts functions returns all data gathered from table Products and Category   
     public function getProducts(){
         
         $sql = "SELECT * FROM Products INNER JOIN Category ON Products.CategoryId = Category.Id";
-        $result = $this->connect()->query($sql);
-        // fetch data form executed sql statement and store it in $data[] array
-        while($row = $result->fetch()) {
-            $data[] = $row;
+
+        if ($result = $this->connect()->query($sql)) {
+            $data = $result->fetchAll(PDO::FETCH_OBJ);
         }
         
-        if (isset($data)){
-            return $data;
-        }
+        return $data;
 
     }
 

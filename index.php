@@ -26,21 +26,18 @@ include_once 'includes\autoloader.php';
         <form method="POST" id="deleteProducts" action="remove.php">
             <div class="row">    
                 <?php
-                    // Initialize object Product
-                    $product = new Product();
-                    // Call function getProducts() of class Products to select data from table
-                    $all = $product->getProducts();
-                    if (is_array($all))
+                    $action = new Action();
+                    $products = $action->getProducts();
+                    if (is_array($products))
                     {
-                        // Foreach Product, dynamically generate content with Product specific information
-                        foreach ($all as $data) {
+                        foreach ($products as $product) {
                             echo "<div class=\"col-md-3 box\">
-                                <input type=\"checkbox\" name=\"check-for-delete[]\" value=\"{$data["SKU"]}\" />
+                                <input type=\"checkbox\" name=\"check-for-delete[]\" value=\"{$product->SKU}\" />
                                 <div class=\"inner\">
-                                    <p><b>SKU</b>: ".$data["SKU"]."</p>
-                                    <p><b>Name</b>: ".$data["Name"]."</p>
-                                    <p><b>Price($)</b>: ".$data["Price"]."</p>
-                                    <p><b>".$data["Type"]."</b>: ".$data["Value"]."</p>
+                                    <p><b>SKU</b>: ".$product->SKU."</p>
+                                    <p><b>Name</b>: ".$product->Name."</p>
+                                    <p><b>Price($)</b>: ".$product->Price."</p>
+                                    <p><b>".$product->Type."</b>: ".$product->Value."</p>
                                 </div>
                             </div>";
                         }
