@@ -43,9 +43,9 @@
             <div class="col-sm-3">
                 <select class="custom-select" id="type" name="Type" required>
                     <option value="">Choose Switcher Type</option>
-                    <option value="Books" id="book">Book</option>
-                    <option value="DVDs" id="dvd">DVD</option>
-                    <option value="Furniture" id="furniture">Furniture</option>
+                    <option value="book" id="book">Book</option>
+                    <option value="dvd" id="dvd">DVD</option>
+                    <option value="furniture" id="furniture">Furniture</option>
                 </select>
             </div>
         </div>
