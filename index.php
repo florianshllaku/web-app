@@ -27,6 +27,8 @@ include_once 'includes\autoloader.php';
             <div class="row">    
                 <?php
                     $action = new Action();
+                    // call method getProducts from Action class;
+                    // get a list of objects from database;
                     $products = $action->getProducts();
                     if (is_array($products))
                     {
