@@ -23,4 +23,4 @@ A web-app containing two pages for
 
 ### Project ###
 * [Source Code](https://bitbucket.org/florianshllaku/web-app/src/master/)
-* [Website-URL](http://51.83.93.105/)
+* [Website-URL](http://18.198.57.90/)
